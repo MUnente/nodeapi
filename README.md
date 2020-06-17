@@ -40,3 +40,7 @@ const database = mysql.createConnection({
   password: 'bar', // Senha desse usuário, exemplo: bar
 });
 ```
+
+### Licença
+
+MIT
