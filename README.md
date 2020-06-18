@@ -4,13 +4,13 @@ Este repositório foi baseado na API Rest do curso NodeJS da Rocketseat.
 
 ## Breve descrição
 
-Uma API simples que pode ser utilizada para criar/ler/atualizar/deletar um produto do Banco de dados (CRUD = Create, Read, Update e Delete).
+Uma API simples que pode ser utilizada para criar/ler/atualizar/deletar produtos do Banco de Dados (CRUD = Create, Read, Update e Delete).
 
 ## Tecnologias utilizadas
 
 As principais tecnologias utilizadas neste projeto foram:
 
-* Javascript
+* JavaScript
 * Node.js
 * Express
 * Celebrate
@@ -21,13 +21,15 @@ As principais tecnologias utilizadas neste projeto foram:
 
 A partir da rota principal http://localhost:3001/api, você pode:
 
-* Listar todos os produtos cadastrados: http://localhost:3001/api/products (Não é necessário, porém se quiser filtrar por página, basta acrescentar ?page=NumeroDaPagina)
-* Listar apenas um produto por Id: http://localhost:3001/api/products/IdProduto
-* Criar um produto: http://localhost:3001/api/products com um corpo de requisição do tipo JSON
-* Atualizar dados de um produto: http://localhost:3001/api/products/IdProduto com um corpo de requisição do tipo JSON
-* Deletar um produto: http://localhost:3001/api/products/IdProduto
+* **GET** - Listar todos os produtos cadastrados: http://localhost:3001/api/products (Não é necessário, porém se quiser filtrar por página, basta acrescentar `?page=NumeroDaPagina`)
+* **GET** - Listar apenas um produto por Id: http://localhost:3001/api/products/IdProduto
+* **POST** - Criar um produto: http://localhost:3001/api/products com um corpo de requisição do tipo JSON
+* **PUT** - Atualizar dados de um produto: http://localhost:3001/api/products/IdProduto com um corpo de requisição do tipo JSON
+* **DELETE** - Deletar um produto: http://localhost:3001/api/products/IdProduto
 
-Para visualizar as tabelas do banco de dados, você pode ver pelo console no terminal, usando o programa MySQL Server, ou pela interface gráfica do programa MySQL Workbench.
+Para visualizar a tabela do banco de dados, recomendo utilizar o programa MySQL Server (visualização via CLI) ou o MySQL Workbench (visualização via GUI).
+
+A maioria dos navegadores só consegue nos retornar dados vindos de requisição GET. Então, para  visualizar os resultados de outros métodos HTTP, recomendo utilizar um programa chamado [Insomnia](https://insomnia.rest/).
 
 ### Observações
 
