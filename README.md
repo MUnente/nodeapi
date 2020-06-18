@@ -33,7 +33,7 @@ A maioria dos navegadores só consegue nos retornar dados vindos de requisição
 
 ### Observações
 
-No arquivo de conexão com a base de dados `conn.js`, é importante colocar o usuário (já existente nas configurações do banco) irá acessar a database e a senha (caso tenha).
+No arquivo de conexão com a base de dados `conn.js`, é importante colocar o usuário (já existente nas configurações do banco) que irá acessar a database e a senha (caso tenha).
 
 ```javascript
 const database = mysql.createConnection({
