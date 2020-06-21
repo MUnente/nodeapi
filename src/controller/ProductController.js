@@ -25,7 +25,7 @@ module.exports = {
     const {title, description, url} = req.body;
     const sql = `INSERT INTO product (title, description, url, createdAt) VALUES ('${title}', '${description}', '${url}', NOW())`;
     
-    await database.query(sql, err => err ? res.status(400).send(err) : res.send('Product created'));
+    await database.query(sql, err => err ? res.status(400).send(err) : res.json('Product created'));
   },
 
   async show(req, res) {
