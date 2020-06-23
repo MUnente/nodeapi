@@ -40,9 +40,10 @@ const database = mysql.createConnection({
   host: 'localhost',
   user: 'foo', // Nome do usuário, exemplo: foo
   password: 'bar', // Senha desse usuário, exemplo: bar
+  multipleStatements: true
 });
 ```
 
 ### Licença
 
-MIT
+MIT License

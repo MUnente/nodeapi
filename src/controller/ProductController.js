@@ -4,19 +4,30 @@ module.exports = {
   async index(req, res) {
     let {page} = req.query;
 
-    if (page === undefined) {
+    if (page == undefined || page == 0) {
       page = '1';
     }
 
     const limit = 10, offset = (page - 1) * limit;
-    const sql = `SELECT * FROM product LIMIT ${limit} OFFSET ${offset};`;
+    const sql = `SELECT SQL_CALC_FOUND_ROWS * FROM product LIMIT ${limit} OFFSET ${offset}; SELECT FOUND_ROWS();`;
     
+    const obj = {docs: '', total: '', limit, page, pages: ''};
+
     await database.query(sql, (err, result) => {
       if (err) {
         res.status(400).send(err);
       }
       else {
-        result.length === 0 ? res.json('No rows are found') : res.json(result);
+        obj.docs = result[0];
+        obj.total = result[1][0]['FOUND_ROWS()'];
+        obj.pages = Math.ceil(obj.total / obj.limit);
+        
+        if (obj.docs.length === 0) {
+          res.json('No rows are found');
+        }
+        else {
+          res.json(obj);
+        }
       }
     });
   },
